@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8"/>
+
+	<link rel="stylesheet" href="js/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+	<script type="text/javascript"  src  ="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript"  src  ="js/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>	
+	<script type="text/javascript"  src  ="js/jquery-ui.js"></script>	
+	<script type="text/javascript"  src  ="js/toastr-master/build/toastr.min.js"></script> 
+	<link   rel="stylesheet"        href ="js/toastr-master/build/toastr.min.css">
+	<title>Rpassofranco</title>
+	
+	<style type="text/css">
+		body{
+			background-image: linear-gradient(to bottom, white, black);
+			color:#1E748B;
+		}
+	</style>
+	
+	
+	<script type="text/javascript">
+    window.smartlook||(function(d) {
+    var o=smartlook=function(){ o.api.push(arguments)},s=d.getElementsByTagName('script')[0];
+    var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+    c.charset='utf-8';c.src='//rec.getsmartlook.com/bundle.js';s.parentNode.insertBefore(c,s);
+    })(document);
+    smartlook('init', 'a747d45868fae2da712c19f91e4a79b97c105dae');
+    </script>
+
+</head>
+<body>
+	<div class="container">
+     <div class="row" style="background-image:url(img/ceu_topo.png);background-size: 100% auto;">
+       <div class="col-md-12">
+		 <img src="img/portifolio.png"  class="img-responsive">
+	   </div>
+	</div>
+
+		<div class="row">
+	       <div class="col-dm-12">
+	         <!-- Static navbar -->
+				<nav class="navbar navbar-inverse" id="menu">
+				  <div class="container-fluid">
+				    <div class="navbar-header">
+				      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				      </button>
+				      <a class="navbar-brand" href="index.html">Rpassosfranco</a>
+				    </div>
+				    <div id="navbar" class="navbar-collapse collapse">
+				      <ul class="nav navbar-nav">
+				        <li class="active"><a href="index.html">Home</a></li>
+				      	  
+				      	  <li class="dropdown">
+						      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Aplicativos <span class="caret"></span></a>
+						      <ul class="dropdown-menu">
+						       <!-- <li><a href="#">Business Model Canvas</a></li>-->
+						        <li><a href="projetos/BusinesModelCanvas/index.html" target="_blank">Canvas Proposta de Valor</a></li>
+						        <li role="separator" class="divider"></li>
+						        <!--<li><a href="#">App Sem Aperto</a></li>-->
+						      </ul>
+						    </li>
+       					 <li><a href="#" data-toggle="modal" data-target="#myModalSobre">Sobre</a></li>
+				        <li><a href="#" data-toggle="modal" data-target="#myModalContato">Contato</a></li>
+				
+				      </ul>  
+				    </div><!--/.nav-collapse -->
+				   </div>
+				</nav>
+			  <!-- Static navbar -->
+
+				<!-- Modal : CONTATO-->
+				<div class="modal fade" id="myModalContato" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="z-index:90000;top:20%">
+				  <div class="modal-dialog" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				        <h4 class="modal-title" id="myModalLabel">Contato</h4>
+				      </div>
+				      <div class="modal-body">
+				        
+				        <p>Envie em e-mail para</p>
+				        <p>rpassosfranco@gmail.com</p>
+
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<!-- Ambiente Modal-->	
+
+				<!-- Modal : CONTATO-->
+				<div class="modal fade" id="myModalSobre" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="z-index:90000;top:0%">
+				  <div class="modal-dialog" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				        <h4 class="modal-title" id="myModalLabel">Contato</h4>
+				      </div>
+				      <div class="modal-body">
+				       <div class="row">
+					       <div class="col-xs-6">
+					        <img src="img/euMesmo.jpg" class="img-responsive img-circle">
+					       </div>
+					       <div class="col-xs-6">
+					        <div class="caption">
+	        					<h3>Rafael F. R.  Passos</h3>
+	        					<small>Analista de BI Senior</small>
+					        </div>
+					        </div>
+						</div>
+				        <br><br>
+						<small><b>E-mail: </b>rpassosfranco@gmail.com</small>
+				        <br>
+						<small><b>Telefone: </b>+55 (11) 9-5422-2281</small>
+						<br>
+						<small><b>Linkedin: </b><a href="https://br.linkedin.com/in/rafael-franco-regio-dos-passos-3105a729">linkedin</a></small>
+						<br><br>
+						<small><b>Conhecimentos:</b></small>
+						<br>
+						<small>BI pentaho [Kettle, Bi-plataforma, Report Designer,metadata-Editor,workbench, xAction]</small><br>
+						<small>Microsoft  [SQL server, Asp.Net C#, BI-Microsoft]</small><br>
+						<small>Java       [java web, java SE, Rest-Full]</small><br>
+						<small>Script     [javascript, jquery,jquery-ui]</small><br>
+						<small>Outros     [Bootstrap, css, saas, MySQL, Oracle, Postgrees, hightcharts, fusion charts, Cristal Reports]</small><br>
+						<small>Edição     [Photoshop, Guimp]</small><br>
+						<small>Teste/Automação [Selenium]</small>
+						<br><br>
+						<small><b>Formação:</b></small>
+						<br>
+						<small>MBA Engenharia de Software Orientada a Serviços - SOA - FIAP</small>
+						<br>
+						<small>Bacharel em Sistemas de informação - FRSP</small>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<!-- Ambiente Modal-->	
+      </div>
+	</div>
+
+	   
+	   <div class="row">
+ 		 <div class="col-md-12">
+			<div class="page-header">
+			 <b> <h3>Portfolio <small>- Ambientes web/mobile</small></h3></b>
+			</div>
+ 		 </div>
+	   </div>
+	
+		<div class="row">
+		  <div class="col-xs-12 col-md-6">
+		    <div class="thumbnail" id="t1">
+		      <img src="img/projetos/miniatura/tecnodriver.com.br.png" alt="Tecnodriver" class="img-responsive">
+		      <div class="caption">
+		        <h3>Tecnodriver</h3>
+		        <p>
+		          A Tecnodriver é uma empresa que atua no mercado corporativo há mais de 23 anos, ministrando cursos de capacitação em Direção Defensiva, Preventiva, Segura, Econômica e Evasiva. Realiza eventos corporativos como Teste Drive, Ações de Apresentação de Produtos, Programas de Benefícios, Consultoria, Assessoria, Programa de Sensibilização de Executivos Expatriados e Eventos de Treinamento para Certificação. Treinou centenas de empresas e milhares de colaboradores.	
+		        </p>
+		        <a href="http://www.tecnodriver.com.br/">http://www.tecnodriver.com.br/</a>
+		      </div>
+		    </div>
+		  </div>
+		
+		  <div class="col-xs-12 col-md-6" >
+		    <div class="thumbnail" id="t2">
+		      <img src="img/projetos/miniatura/aprigio4010.com.br.png" alt="PSB40 -Trabalho de candidatura para o partido PSB" class="img-responsive">
+		      <div class="caption">
+		        <h3>PSB40</h3>
+		        <p>Trabalho de candidatura para o partido PSB, o portal é 100% personalizável, onde o próprio cliente podia subir notícias em tempo real ou alterar qualquer conteúdo no site, incluindo as cores do próprio site,  porque todo o portal é 100% dinâmico e flexível.</p>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="row">
+		  <div class="col-xs-12 col-md-6">
+		    <div class="thumbnail" id="t3">
+		      <img src="img/projetos/miniatura/ceterin.com.br_.jpg" alt="Ceterin" class="img-responsive">
+		      <div class="caption">
+		        <h3>Ceterin - Clinica</h3>
+		        <p>
+	       		  Clínica Especializada em Terapias Integradas para o tratamento preventivo e reabilitacional, é um espaço que trata o paciente de forma diferenciada buscando promover o bem-estar humano.
+		        </p>
+		      </div>
+		    </div>
+		  </div>
+		
+		  <div class="col-xs-12 col-md-6">
+		    <div class="thumbnail" id="t4">
+		      <img src="img/projetos/miniatura/atallaeandrade.com.br_.jpg" alt="Atalla e Andrade - Advogados" class="img-responsive">
+		      <div class="caption">
+		        <h3>Atalla e Andrade - Advogados</h3>
+		        <p>
+	       		  Escritorio de advocacia
+		        </p>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="row">
+		  <div class="col-xs-12 col-md-6">
+		    <div class="thumbnail" id="t5">
+		      <img src="img/projetos/miniatura/obpc.com.br_.jpg" alt="OBPC - Igreja" class="img-responsive">
+		      <div class="caption">
+		        <h3>OBPC - Igreja</h3>
+		        <p>
+	       		  Projeto de portal para igreja OBPC
+		        </p>
+		      </div>
+		    </div>
+		  </div>
+		
+		  <div class="col-xs-12 col-md-6">
+		    <div class="thumbnail" id="t6">
+		      <img src="img/projetos/miniatura/multiplaacademia.com.br_.jpg" alt="Multiplaacademia - Academia" class="img-responsive">
+		      <div class="caption">
+		        <h3>Multiplaacademia - Academia</h3>
+		        <p>
+	       		  Portal para academia, comtempla controle de grade dinamica e biblioteca de imagens vinculada ao facebook.
+		        </p>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="row">
+		  <div class="col-xs-12 col-md-6">
+		    <div class="thumbnail" id="t7">
+		      <img src="img/projetos/miniatura/perfumestop.com.br.png" alt="PerfumesTop - Web-Commerce" class="img-responsive">
+		      <div class="caption">
+		        <h3>PerfumesTop - Web-Commerce</h3>
+		        <p>
+	       		 Web-Commerce para loja de perfumes
+		        </p>
+		      </div>
+		    </div>
+		  </div>
+		
+		  <div class="col-xs-12 col-md-6">
+		    <div class="thumbnail" id="t8">
+		      <img src="img/projetos/miniatura/PauloDeAbreu.jpg" alt="PerfumesTop - Web-Commerce" class="img-responsive">
+		      <div class="caption">
+		        <h3>E.E.Paulo De Abreu - Escola estadual</h3>
+		        <p>
+	       		 Site da Escola estadual Paulo De Abreu,com controle do ambiente via area restrita.
+				</p>
+	       		<a href="http://eepaulodeabreu.com.br">http://eepaulodeabreu.com.br</a>
+			      </div>
+		    </div>
+		  </div>
+		</div>
+
+
+		<div class="row">
+		  <div class="col-xs-12 col-md-6">
+		    <div class="thumbnail" id="t7">
+		      <img src="img/projetos/miniatura/propostaDeValor.png" alt="Canvas - Proposta de Valor" class="img-responsive">
+		      <div class="caption">
+		        <h3>Canvas - Proposta de Valor</h3>
+		        <p>
+	       		 O Canvas - Proposta de Valor foi todo construído com HTML5+JQuery,ele possui interatividade de criação dos tíquetes e movimentações dos mesmos pelos níveis do canvas, além disso toda a base fica salva localmente "locaStorage", sendo assim a aplicação pode ser utilizada off-line, além de ter recurso para criar os tíquetes também possui recursos para salvar uma cópia em formato de imagem.
+		        </p>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	
+	<footer>
+	  <p>Rpassosfranco</p>
+	  <p>Contato: <a href="mailto:rpassosfranco@gmail.com">
+	  rpassosfranco@gmail.com</a></p>
+	</footer>
+
+	</div>
+</body>
+</html>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	 var windowWidth = window.innerWidth;
+	 var colunas = [];
+
+	 colunas[0] = "#t1";
+	 colunas[1] = "#t2";
+	 colunas[2] = "#t3";
+	 colunas[3] = "#t4";
+	 colunas[4] = "#t5";
+	 colunas[5] = "#t6";
+	 colunas[6] = "#t7";
+	 colunas[7] = "#t8";
+
+	 if (windowWidth > 600)
+	 {
+	    ajustaHeight(colunas);
+	 }
+
+});
+
+function ajustaHeight(colunas)
+{
+	var sColunas = []; 
+	var countItens    = colunas.length;
+
+
+	for(i=0; i < countItens; i++)
+	{
+		sColunas[i] = $(colunas[i]).height();
+	}
+
+	var maiorNumero = Math.max.apply(Math,sColunas);
+
+	for(i=0;i<= countItens; i++)
+	{
+		 $(colunas[i]).height(maiorNumero);
+	}
+
+}
+
+
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-53443243-5', 'auto');
+  ga('send', 'pageview');
+</script>

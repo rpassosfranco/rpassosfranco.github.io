@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="js/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+	  
+<script type="text/javascript"  src  ="js/jquery-1.12.4.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" 
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+		crossorigin="anonymous"></script>
+
+<script type="text/javascript"  src  ="js/jquery-ui.js"></script>	
+
+
+
+	
+<title>Rpassofranco-Model</title>
+
+<style>
+
+ body{
+ 	background-color:#f2f2f2;
+ 	height:100%;
+ }
+
+
+.MapaDeValor
+{
+  background-image: url("img/MapaDeValor.png");
+  background-repeat: no-repeat;
+  min-width: 550px;
+  min-height: 550px;
+}
+.PerfilDoCliente
+{
+  background-image: url("img/PerfilDoCliente.png");
+  background-repeat: no-repeat;
+  min-width: 550px;
+  min-height: 550px;  
+}
+.postiteItem:hover 
+{
+    background-color: yellow;
+}
+ 
+.postiteItem{
+	padding:15px; 
+	font-family: 'Gloria Hallelujah', cursive; 
+	font-size:10px; 
+	color: #000; 
+	width:100%; 
+	max-width: 120px;
+
+/*
+	-moz-transform: rotate(7deg);
+	-webkit-transform: rotate(7deg);
+	-o-transform: rotate(7deg);
+	-ms-transform: rotate(7deg);
+	transform: rotate(7deg);
+*/
+	box-shadow: 0px 4px 6px #333;
+	-moz-box-shadow: 0px 4px 6px #333;
+	-webkit-box-shadow: 0px 4px 6px #333;
+
+   background-color: #FFA500;
+
+   position: absolute;
+   z-index: 99999;
+} 
+
+
+
+
+
+
+#snaptarget { height:610px; width:1000px;}
+.draggable { width: 90px; height: 80px; float: left; margin: 0 0 0 0; font-size: .9em; }
+
+.col-md-6
+{
+	padding-right: 0px;
+	padding-left:  0px;
+}	
+.grid
+{
+	border: 1px solid red;
+	min-height: 275px;
+}
+/*
+.grid:hover
+{
+   background-color: #ccc;
+}*/
+
+
+.ui-widget {
+    font-family: Verdana,Arial,sans-serif;
+    font-size: .8em;
+}
+
+.ui-widget-content {
+    background: #F9F9F9;
+    border: 1px solid #90d93f;
+    color: #222222;
+}
+
+.ui-dialog {
+    left: 0;
+    outline: 0 none;
+    padding: 0 !important;
+    position: absolute;
+    top: 0;
+}
+
+#success {
+    padding: 0;
+    margin: 0; 
+}
+
+.ui-dialog .ui-dialog-content {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    overflow: auto;
+    position: relative;
+    padding: 0 !important;
+}
+
+.ui-widget-header {
+    background: #b0de78;
+    border: 0;
+    color: #fff;
+    font-weight: normal;
+}
+
+.ui-dialog .ui-dialog-titlebar {
+    padding: 0.1em .5em;
+    position: relative;
+        font-size: 1em;
+}
+
+</style>
+
+<script>
+var db;
+
+function ControleLog(log, funcao)
+{
+	if (funcao==1)
+	{
+    	$("#ControleLog").append(log);
+    }else{
+    	 $("#ControleLog").html(log);
+    }
+}
+
+function CriaPostite(sDivId)
+{
+   //Gera Chave
+   var dataAtual = new Date();
+ 
+   var ano     = dataAtual.getFullYear();
+   var mes     = dataAtual.getMonth()+1;
+   var dia     = dataAtual.getDate();
+   var hora    = dataAtual.getHours();
+   var minuto  = dataAtual.getMinutes();
+   var segundo = dataAtual.getSeconds();
+   var milesegundo  = dataAtual.getMilliseconds();
+   var ramdon   = Math.floor(Math.random()*10);
+   
+   var chaveItem = ano+mes+dia+hora+minuto+segundo+milesegundo+ramdon;
+   var chaveItemString = chaveItem.toString();
+
+   //Cria item
+   var sRemove ="<input type='button' name='removerItem' value='Remover' onclick='removerParceirosChave("+chaveItem+")'><br>";
+
+
+	 $("#mensagem").dialog({
+	 	        dialogClass: "no-close",
+	            modal: true,
+	            title: 'Nova Etiqueta',
+	            width: 400,
+	            open: function(event, ui) {
+	               
+	                    $('#conteudoPost').val("");
+	               
+	            },
+	            buttons : {
+	                Ok: function() {
+	                    $(this).dialog("close"); //closing on Ok click
+
+						var item = $('#conteudoPost').val() ;
+	                    var corSelecionada = $('#corPost option:selected').val();
+
+	                    console.log(corSelecionada);
+
+						var sNovoPostite ="<div style='background-color:"+corSelecionada+"' class='panel postiteItem ui-widget-content' id='"+chaveItemString+"'>"+sRemove+"<div class='panel-heading'>"+item+"</div></div>";
+					   //Adiciona item ao canvas
+					   $(sDivId).html($(sDivId).html()+sNovoPostite);
+					    ArrastarSoltar();
+	                }
+	            }
+	 });
+
+  
+
+}
+
+
+function ArrastarSoltar()
+{
+	$(".postiteItem").draggable({ 
+        containment: '#todo', 
+        scroll: false
+		,start: function(event,ui)
+		{
+		    console.log("Iniciou movimento");
+		   //console.log(ui.helper[0].outerHTML);
+		}
+
+   });
+ 
+
+
+   $('#sortable1').droppable({
+		drop: function(event,ui)
+		{
+               console.log("Parou movimento em sortable1");
+               DAOcadastraNaBase(ui,"#sortable1",ui.helper[0].id);
+               
+                   console.log(ui);
+    
+
+		}
+   });
+   $('#sortable2').droppable({
+		drop: function(event,ui)
+		{
+               console.log("Parou movimento em sortable2");
+               DAOcadastraNaBase(ui,"#sortable2",ui.helper[0].id);
+		}
+   });
+   $('#sortable3').droppable({
+		drop: function(event,ui)
+		{
+               console.log("Parou movimento em sortable3");
+               DAOcadastraNaBase(ui,"#sortable3",ui.helper[0].id);
+		}
+   });
+   $('#sortable4').droppable({
+		drop: function(event,ui)
+		{
+               console.log("Parou movimento em sortable4");
+               DAOcadastraNaBase(ui,"#sortable4",ui.helper[0].id);
+		}
+   });
+
+}
+
+
+function removerParceirosChave(chaveItem)
+{
+    $("#"+chaveItem).remove();
+}    
+
+function DAOcadastraNaBase(ui,local,id)
+{
+	var itemLocal = ui.helper[0].outerHTML;
+	cadastroNaBase(db,itemLocal,local,id);
+}
+
+
+
+
+
+
+/**DATA BASE----------------------------------------------------------->>>>>>*/
+function onError(transaction, error) {
+    alert('Oops. Error was '+error.message+' (Code '+error.code+')');
+    return false;
+}
+
+function onSuccess(transaction, success) {
+    alert('200OK');
+    return true;
+}
+
+
+function criaBancoDeDados(shortName)
+{
+	try {
+    if (!window.openDatabase) {
+        alert('not supported');
+    } else {
+        var version = '1.0';
+        var displayName = 'My Important Database';
+        var maxSize = 65536; // in bytes
+        db = openDatabase(shortName, version, displayName, maxSize);
+        // You should have a database instance in db.
+    }
+} catch(e) {
+    // Error handling code goes here.
+    if (e == 2) {
+        // Version number mismatch.
+        alert("Invalid database version.");
+    } else {
+        alert("Unknown error "+e+".");
+    }
+    return;
+    console.log("Banco Criado");
+}
+}
+
+function limparBase()
+{
+    var db = openDatabase("dbPropostaDeValor", "1.0", "ModelCanvasRpassos Web SQL Database", 2 * 1024 * 1024);
+
+	db.transaction(
+	    function (transaction) {
+	        transaction.executeSql("drop table  tbModelCanvasValor",
+	            [], // array of values for the ? placeholders
+	            onSuccess, onError);
+	    }
+	);
+}
+
+
+function CriaTabelaDePostites(db)
+{
+  db.transaction(function(tx) {
+    tx.executeSql("CREATE TABLE IF NOT EXISTS " +
+                  "tbModelCanvasValor(id INTEGER PRIMARY KEY AUTOINCREMENT, html varchar(max), div varchar(max),idItem INTEGER)", []);
+  });
+}
+
+
+function cadastroNaBase(db,item,local,id)
+{
+    db.transaction(function(tx){
+    var addedOn = new Date();
+    tx.executeSql("INSERT INTO tbModelCanvasValor (html,div,idItem) VALUES(?,?,?)",
+        [item,local,id],
+        onSuccess,
+        onError);
+   });
+
+	
+}
+
+/**<<<<<--------------------------------------------------DATA BASE*/
+
+
+
+
+
+
+function leituraNaBase()
+{
+   var db = openDatabase("dbPropostaDeValor", "1.0", "ModelCanvasRpassos Web SQL Database", 2 * 1024 * 1024);
+   
+   db.transaction(function(tx){
+    tx.executeSql(       
+        "SELECT * FROM tbModelCanvasValor",
+        [],
+        function(tx, result){
+            console.log('Deu certo!');
+            var len = result.rows.length, i;
+            
+			//linha a linha
+			for(i=0;i<len;i++){
+			    //console.log( result.rows.item(i) );
+				 var row = result.rows.item(i);
+				 var sNovoPostite  = row['html'];
+				 var sDivId        = row['div'];
+				 var sidItem       = row['idItem'];
+                 
+
+                 $(sDivId).html($(sDivId).html()+sNovoPostite);
+                 $("#"+sidItem).removeAttr("style");
+
+                 ArrastarSoltar();
+			}
+        },
+        function(tx, error){
+            console.log('Deu errado!');
+            console.log(error);
+        }
+    );
+ });
+}
+
+
+
+
+
+
+
+function dataHandler(transaction, results)
+{
+    // Handle the results
+    var string = "A lista conte os seguintes Items:\n\n";
+    for (var i=0; i<results.rows.length; i++) {
+        // Each row is a standard JavaScript array indexed by
+        // column names.
+        var row = results.rows.item(i);
+        string = string + row['html']+"\n";
+    }
+    alert(string);
+}
+
+
+$(document).ready(function(){
+
+//Cria Banco de Dados
+criaBancoDeDados("bdPropostaDeValor");
+CriaTabelaDePostites(db);
+
+
+//leituraNaBase();
+
+$("#MapaDeValorBtn").click(function() {
+   var sDivId  = "#NovoPostite";//"#sortable"+ $(this).attr('alt');
+  
+   ControleLog(sDivId,1);
+   CriaPostite(sDivId);
+ });
+ 
+
+
+
+
+
+//carrega itens salvos
+//leituraNaBase();
+
+/*
+
+$(".addParceirosChave").click(function() {
+   var sDivId  = "#sortable"+ $(this).attr('alt');
+   
+   //Gera Chave
+   var dataAtual = new Date();
+ 
+   var ano     = dataAtual.getFullYear();
+   var mes     = dataAtual.getMonth()+1;
+   var dia     = dataAtual.getDate();
+   var hora    = dataAtual.getHours();
+   var minuto  = dataAtual.getMinutes();
+   var segundo = dataAtual.getSeconds();
+   var milesegundo  = dataAtual.getMilliseconds();
+   var ramdon   = Math.floor(Math.random()*10);
+   
+   var chaveItem = ano+mes+dia+hora+minuto+segundo+milesegundo+ramdon;
+   var chaveItemString = chaveItem.toString();
+   
+   //Cria item
+   var sRemove ="<input type='button' name='removerItem' value='Remover' onclick='removerParceirosChave("+chaveItem+")'><br>";
+   var item = prompt("Titulo do postite", "Novo Item");
+   var sNovoPostite ="<div class='panel postiteItem postiteItem"+$(this).attr('alt')+"' id='"+chaveItemString+"'>"+sRemove+"<div class='panel-heading'>"+item+"</div></div>";
+   
+   //Adiciona item ao canvas
+   $(sDivId).html($(sDivId).html()+sNovoPostite);
+   
+    //Cadastra item novo 
+	cadastroNaBase(sNovoPostite,sDivId,chaveItem);
+});
+
+ //DragDrop
+ $("#sortable1, #sortable2, #sortable3,#sortable4,#sortable5,#sortable6,#sortable7,#sortable8,#sortable9").sortable({
+      connectWith: ".connectedSortable"
+ }).disableSelection();
+
+});
+
+function removerParceirosChave(chaveItem)
+{
+    $("#"+chaveItem).remove();
+	removeItemDaBase(chaveItem);
+	console.log(chaveItem);
+	
+}
+
+//Fuções de Banco de dados
+function limparBase()
+{
+    var db = openDatabase("dbModelCanvasRpassos", "1.0", "ModelCanvasRpassos Web SQL Database", 200000);
+	// criar a tabela e insere os itens
+	db.transaction (function (tx) {  
+      tx.executeSql ("drop table  tbModelCanvas",null,null);
+      console.log('Base excluida');
+   });
+}
+
+function cadastroNaBase(item,local,id)
+{
+    var db = openDatabase("dbModelCanvasRpassos", "1.0", "ModelCanvasRpassos Web SQL Database", 200000);
+	// criar a tabela e insere os itens
+	db.transaction (function (tx) {  
+      tx.executeSql ("CREATE TABLE IF NOT EXISTS tbModelCanvas (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, html TEXT,div TEXT,idItem INTEGER)",null,null);
+      tx.executeSql ("INSERT INTO tbModelCanvas (html,div,idItem) VALUES(?,?,?)",[item,local,id],null,null);
+      console.log('item cadastrado')
+   });
+}
+ 
+function removeItemDaBase(idItem)
+{
+    var db = openDatabase("dbModelCanvasRpassos", "1.0", "ModelCanvasRpassos Web SQL Database", 200000);
+	// criar a tabela e insere os itens
+	db.transaction (function (tx) {  
+      tx.executeSql ("delete from tbModelCanvas where idItem=?",[idItem],null,null);
+      console.log('Linha excluida');
+   });
+}
+
+function leituraNaBase()
+{
+   var db = openDatabase("dbModelCanvasRpassos", "1.0", "ModelCanvasRpassos Web SQL Database", 200000);
+   
+   db.transaction(function(tx){
+    tx.executeSql(       
+        "SELECT * FROM tbModelCanvas",
+        [],
+        function(tx, result){
+            console.log('Deu certo!');
+            var len = result.rows.length, i;
+            
+			//linha a linha
+			for(i=0;i<len;i++){
+			
+                //console.log( result.rows.item(i) );
+				 var row = result.rows.item(i);
+				 var sNovoPostite  = row['html'];
+				 var sDivId        = row['div'];
+                 
+                 $(sDivId).html($(sDivId).html()+sNovoPostite);
+			}
+        },
+        function(tx, error){
+            console.log('Deu errado!');
+            console.log(error);
+        }
+    );
+});
+}
+*/
+});
+
+
+
+
+/*
+    $(document).ready(function() {
+
+			var sDivs ="<div class='row'>";
+			var sDivsF="</div>";
+			var sHtmlFinal;
+			var idDiv=0;
+
+			for (j=1;j<14;j++)
+			{	
+				sHtmlFinal += sDivs;
+				for (i=1;i<12;i++)
+				{
+					sHtmlFinal += "<div class='col-md-1 grid' id='id_"+idDiv+"'></div>"; 
+					idDiv+=1;
+				}
+				sHtmlFinal += sDivsF;
+			}
+
+			$(".MapaDeValor").html(sHtmlFinal+sDivsF);
+       });
+
+*/
+
+
+</script>
+
+</head>
+<body>
+    
+
+
+<div id="mensagem" title="Título da mensagem" style="display:none" align="center">
+   
+<select id="corPost">
+	<option value="#FFA500" style="background-color:#FFA500">Cor1</option>
+	<option value="#00BFFF" style="background-color:#00BFFF">Cor2</option>
+	<option value="#00FFFF" style="background-color:#00FFFF">Cor3</option>
+	<option value="#FFB6C1" style="background-color:#FFB6C1">Cor4</option>
+</select>
+
+ Conteudo do postite
+<input type="text" name="conteudoPost" id="conteudoPost">
+
+</div>
+
+<div class="container wrapper" id="todo">
+
+
+
+
+
+
+ <h1>Business Model Canvas: Proposta de Valor</h1>
+ <input type="button" id="MapaDeValorBtn" value="Criar Etiqueta">
+ <input type='button' name='limparBase' value='zerar base' onclick='limparBase()'>
+ <br>
+ <br>
+
+ <div class="row" style="min-height:100px">
+    <div id="NovoPostite" class="connectedSortable"></div>
+ </div>
+ 
+ </br>
+ </br>
+
+  <div class="row">
+	 <div class="col-md-6 MapaDeValor" alt="1">
+           <div class="row">
+            <div class="col-md-6">
+                <div id="sortable1" class="connectedSortable grid"></div>
+            </div>
+            <div class="col-md-6">
+            	<div id="sortable2" class="connectedSortable grid"></div>
+            </div>
+		   </div>
+		    <div class="row">
+            <div class="col-md-6">
+            	<div id="sortable3" class="connectedSortable grid"></div>
+            </div>
+            <div class="col-md-6">
+            	<div id="sortable4" class="connectedSortable grid"></div>
+            </div>
+		   </div>	       
+  	 </div>
+	 <div class="col-md-6 PerfilDoCliente"  alt="2">
+	   <div id="sortable2" class="connectedSortable"></div>
+	 </div>
+ </div>
+ <div class="row">
+    <div id="ControleLog"></div>
+    <p class="position"></p>
+    <p class="size"></p>
+ </div>
+
+
+ 
+</div>
+</body>
+</html>
+

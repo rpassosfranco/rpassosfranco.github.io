@@ -24,3 +24,12 @@
     z-index: 9999;
     position: absolute;
 }
+
+
+.nav-sm .nav.side-menu li a {
+    text-align: left !important;
+    font-weight: 400;
+    font-size: 15px;
+    padding: 10px 5px;
+	border-bottom:3px solid #1a536d;
+}

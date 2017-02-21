@@ -29,12 +29,6 @@ var menuJSONObject ={
          "descricao":"Acompanhe",
          "link":"acompanhepedido.html",
          "icone":"images/acompanheseupedido.png"
-      },
-      {  
-         "id":"menu7",
-         "descricao":"",
-         "link":"ajuda.html",
-         "icone":"images/ajuda.png"
       }
    ]
 };

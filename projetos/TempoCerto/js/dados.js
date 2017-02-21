@@ -2,37 +2,37 @@ var menuJSONObject ={
    "menu":[  
       {  
          "id":"menu1",
-         "descricao":"Minha conta",
+         "descricao":"Conta",
          "link":"profile.html",
          "icone":"images/Minhaconta.png"
       },
       {  
          "id":"menu2",
-         "descricao":"Lista de compras",
+         "descricao":"Comprar",
          "link":"listadecompras.html",
          "icone":"images/listadecompras.jpg"
       },
       {  
          "id":"menu4",
-         "descricao":"Agendar compras",
+         "descricao":"Agendar",
          "link":"agendarcompras.html",
          "icone":"images/agendarcompras.png"
       },
       {  
          "id":"menu5",
-         "descricao":"Historico de compras",
+         "descricao":"Historico",
          "link":"historico.html",
          "icone":"images/historico.png"
       },
       {  
          "id":"menu6",
-         "descricao":"Acompanhe seu pedido",
+         "descricao":"Acompanhe",
          "link":"acompanhepedido.html",
          "icone":"images/acompanheseupedido.png"
       },
       {  
          "id":"menu7",
-         "descricao":"Ajuda",
+         "descricao":"",
          "link":"ajuda.html",
          "icone":"images/ajuda.png"
       }

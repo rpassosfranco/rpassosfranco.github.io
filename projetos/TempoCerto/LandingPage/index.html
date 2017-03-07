@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>TempoCerto</title>
+	
+	<!-- Bootstrap -->
+    <link rel="stylesheet" href="plugins/bootstrap/dist/css/bootstrap.min.css">
+    <!-- animate -->
+    <link rel="stylesheet" href="plugins/animate.css/animate.min.css">
+    <!-- ionicons -->
+    <link rel="stylesheet" href="plugins/ionicons/css/ionicons.min.css" />
+	
+	
+	
+	
+	<style>
+		* {
+			margin:0; 
+		    padding: 0;
+		   }
+		html, body {height:100%;
+		           background-color:#000}
+
+		section { display: inline-block; } /*Para ajustar padrão do chrome*/
+		 
+		/** formata elementos que tem backgrounds parallax **/
+		.parallax {
+			font-family: 'tahoma', sans-serif;
+			color:#FFF;
+			margin: 0 auto;
+			width: 100%;
+			/*max-width: 1920px;*/
+			position: relative;
+			min-height: 100%;
+			text-shadow:0 0 10px rgba(0,0,0,0.7);
+			background-position: 50% 0;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+		}
+		 
+		/* Define backgrounds dos divs */
+		#home {
+			//  background-image: url(img2.jpg);
+			  background-size: 100% 100%;
+			  position: relative;
+			  background-repeat: no-repeat;
+			  background-color:#004c82;
+			  }
+			  
+		#portfolio {
+			background-image: url(img1.jpg);
+			  background-size: 100% 100%;
+        /*	-webkit-box-shadow:-20px 0 20px 5px #555;
+			-moz-box-shadow:-20px 0 20px 5px #555;
+			-ms-box-shadow:-20px 0 20px 5px #555;
+			-o-box-shadow:-20px 0 20px 5px #555;
+			box-shadow:-20px 0 20px 5px #555;*/
+			
+		}
+		#Prototipo {background-image: url(img1.jpg);background-size: 100% 100%;	background-repeat: no-repeat;}
+		 
+		/** Formata o article que vai o texto **/
+		.parallax article {
+			width: 70%;
+			text-align: center;
+			margin:0 auto;
+		}
+		#home article { padding:10% 0 0; }
+		#portfolio article { padding:15% 0 0;}
+		#Prototipo article { padding:15% 0 0;}
+		 
+		/** formata texto **/
+		article header { margin-bottom: 10px; }
+		article h1 {font-size:30px;}
+		article p {line-height: 30px; margin-top:15px; text-shadow: 1 0 20px #000; }
+		article ul { list-style:none; padding: 0; margin: 0; }
+		article li { display: inline-block; }
+	
+		.destaque
+		{
+		 color:#fff;
+		 font-size:120%;
+		}
+		
+		.destaque2
+		{
+		 font-size:120%;
+		 color:#3c72c9;
+		}
+	
+	
+		p {
+		font-size: 20px;
+		line-height: 1.5;
+		margin-bottom: 20px;
+		color:#fff;
+		}
+		
+		.p2{
+		
+		color:#fff;
+		
+		}
+		
+		
+
+	</style>
+
+
+</head>
+<body>
+ 	<section id="home" class="parallax" data-speed="5" class="container-fluid"> 
+		<article>
+			<div class="media wow fadeInRight">
+				<img src="TempoCerto_Logo.png" alt="tempoCerto" Style="width:200px"/>
+			</div>
+			<br>
+			 <a href="https://rpassosfranco.github.io/projetos/TempoCerto" class="btn btn-success btn-lg" role="button" target="_New">Comece a Economizar!</a>
+			<header>
+			    <div class="media wow fadeIn">
+					<h1>Seja Bem Vindo!</h1>
+					<p class="text-justify">Mantenha a sua casa abastecida todos os meses <mark>economizando tempo</mark> e <mark>dinheiro</mark>.<p>
+					<p class="text-justify">Em tempo atuais é cada vez mais difícil ter tempo, afinal tempo é dinheiro e não podemos perder a toa,logo tarefas básicas que levam um tempo considerado estão sendo difíceis de serem executadas, uma destas tarefas foi a que originou este projeto, a tarefa de fazer compras, que para manter sua dispensa abastecida você deve: fazer uma lista com o que está faltando, ir aos mercados efetuar uma pesquisa de preço e selecionar os melhores produtos/marcas de sua preferência e por fim retornar a sua residência, todo este processo embora curto consome um tempo considerável e que podera ser utilizado de forma mais eficiente em seu dia a dia apos nos conhecer!</p>
+				</div>
+			</header>
+		</article>
+	</section>
+	<section id="portfolio" class="parallax" data-speed="3">
+		<article>
+			<header>
+				<h1>Solução?</h1>
+				<p  class="p2 text-justify">Sua lista de compras do mês será cadastrada em nosso sistema, esta lista poderá conter todas informações básicas para uma análise tais como: Produto, quantidade desejada, marca.
+				uma vez dado ordem pelo cliente, esta lista será processada em nosso sistema e será realizado um "leilão" desta lista, o mercado que pegar esta lista pelo menor preço será o mercado onde será comprado esse item, mas todo este processo será eletrônico 
+				e em questões de segundos, a lista deve ser processada e efetuado o leilão, tudo <mark>muito rápido</mark> e direto, após este leilão realizado e aprovado os itens serão separados e entregues a seu endereço em horário agendado e pontualmente.
+				</p>
+			</header>
+		</article>
+	</section>
+	<section id="Prototipo" class="parallax" data-speed="4">
+		<article>
+			<header>
+			<div class="row">   
+				<h1>Protótipo</h1>
+				<p class="text-justify">
+				Uma plataforma de compras on-line onde permite ao consumidor cadastrar sua lista de compras e fazer o gerenciamento da mesma;
+				Após cadastrar esta lista de compras o consumidor poderá agendar uma data para que a lista seja pesquisada automaticamente em todos os mercados cadastrados na plataforma e escolha onde os produtos saem mais baratos, uma vez feito este processo a própria plataforma faz as compras para o consumidor e envia para sua residência;</p>
+
+				<p class="text-justify">A plataforma tempo certo, recebe este nome porque ela vem justamente para ajustar o tempo dos consumidores alvos que como sabemos estão cada vez mais sem tempo mas precisam manter a despensa cheia, logo nossa plataforma supre esta falta de tempo cuidando de alimentar a dispensa de nossos consumidores de forma a comprar sempre nos lugares com melhor preço e assim além de poupar o tempo de nossos clientes também poupamos suas reservas financeiras;</p>
+
+				<p class="text-justify">Agora você pode programar a compra de alimentos não refrigerados, produtos de higiene, limpeza, utilitários e receber em casa todos os meses;</p>
+
+				<p class="text-justify">Crie sua lista (Item a item, Lista por perfil)
+				Seleciona a data de entrega
+				Receba em casa em data e hora programada
+				Toda compra poderá ser automática ou manual através de lembrete
+				</p>
+			
+			<ul>
+				<li><a href=""><img src="Tela_principal.png" alt="" style="width:200px;padding-top: 0px"></a></li>
+				<li><a href=""><img src="Tela_listaDeCompras.png" alt="" style="width:200px;padding-top: 0px"></a></li>
+				<li><a href=""><img src="Tela_historicoDeCompras.png" alt="" style="width:200px;padding-top: 0px"></a></li>
+				<li><a href=""><img src="Tela_agendarCompras.png" alt="" style="width:200px;padding-top: 0px"></a></li>
+			</ul>
+			</div>
+			</header>
+			<br>
+			<br>
+		</article>
+	</section>
+	<section id="Gostou" class="parallax" data-speed="3">
+		<article>
+			<header>
+			    <div class="container-fluid">
+					<div class="row">   
+					
+							  <h3>Contatos</h3> 
+							 
+							  <p>Quer saber mais?</p>
+							  <p>Nos envie mensagens e nossa equipe entrara em contato com você.</p>
+							 
+							  <br/>
+							<div class="col-lg-6 col-lg-offset-1 text-center">	  
+							 <form action="https://docs.google.com/forms/d/e/1FAIpQLSf91yNRrufTpZXS7bMgw4-BpL6ofs5ckvRypJEpm4dykbwQ1w/formResponse" method="post" id="application-form" target="_blank" class="contact-form row">
+									
+								<div class="col-md-12">
+									<label></label>
+									<input type="email"class="form-control email" placeholder="Endereço de e-mail" jsname="YPqjbf" autocomplete="email" tabindex="0" aria-label="Seu e-mail"
+											name="emailAddress" value="" required="" dir="auto" data-initial-dir="auto">
+								</div>
+								<div class="col-md-6">
+									<label></label>
+									<input type="text"class="form-control" placeholder="Nome" jsname="YPqjbf" autocomplete="off" tabindex="0" aria-label="Nome" aria-describedby="i.desc.1180991093 i.err.1180991093" name="entry.922378124" value="" required="" dir="auto" data-initial-dir="auto" data-initial-value="">
+								</div>
+								
+									
+								<div class="col-md-6">
+									<label></label>
+									 <input type="text"class="form-control" placeholder="Teleone" jsname="YPqjbf" autocomplete="off" tabindex="0" aria-label="Teleone" aria-describedby="i.desc.397955688 i.err.397955688"
+											name="entry.594737135" value="" dir="auto" data-initial-dir="auto" data-initial-value="">
+								</div>
+								<div class="col-md-12">
+									<label></label>
+									<textarea class="form-control" placeholder="Mensagem" 
+												jsname="YPqjbf" data-rows="1" tabindex="0" aria-label="Mensagem" jscontroller="gZjhIf"
+												jsaction="input:Lg5SV;ti6hGc:XMgOHc;rcuQ6b:WYd;" name="entry.1540224958"
+												dir="auto" data-initial-dir="auto" data-initial-value="" style="height: 100px;">
+											</textarea>
+								</div>	
+									
+									<div class="col-md-4 col-md-offset-4">
+									<label></label>
+									<input type="submit" id="submit" class="btn btn-primary btn-block btn-lg" name="submit" value="Enviar">
+								</div>
+									 
+								
+									
+								</form>
+							</div>
+
+							
+							
+
+						<div class="col-lg-3 text-center">
+						   <p><i class="icon ion-social-whatsapp-outline"></i> <a href="tel:11954222281">(11) 95422-2281</a></p>
+						   <hr>
+						   <p><i class="icon ion-ios-email-outline"></i><a href="mailto:sac@tempocerto.com.br">sac@tempocerto.com.br</a></p>
+						</div>
+						
+					
+				
+			</div>
+			</header>
+		</article>
+	</section>
+<script src="plugins/jquery/dist/jquery.min.js"></script>
+<script src="plugins/bootstrap/dist/js/bootstrap.js"></script>
+<script src="plugins/jquery-easing/jquery.easing.min.js"></script>
+<script src="plugins/wow/wow.js"></script>
+
+	<script>
+		$(function(){
+			$('.parallax').each(function(){
+				var $obj = $(this);
+				 
+				$(window).scroll(function() {
+					var yPos = -($(window).scrollTop() / $obj.data('speed'));			 
+					var bgpos = '50% '+ yPos + 'px';			 
+					$obj.css('background-position', bgpos );		 
+				});
+
+			});
+		});
+	</script>
+</body>
+</html>
+

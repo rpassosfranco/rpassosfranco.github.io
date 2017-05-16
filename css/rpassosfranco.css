@@ -1,0 +1,35 @@
+	#gmap_canvas img{max-width:none!important;background:none!important}
+	.barraFixa
+	{	background-color: rgba(116,133,152,.6);
+		//background-color:#748598;
+		//filter:alpha(opacity=50); 
+		//opacity:0.5;
+	}
+	.inner
+	{
+		padding:20px;
+	}
+	.redondo {
+		width: 200px;
+		height: 200px;
+		background-color: #FFF;
+		color: #FFF;
+		border-radius: 50%;
+		padding:8px;
+	}
+	h2{
+		color:#FFF;
+		font-size: 20px;
+	}
+	h1{
+		color:#FFF;
+	}
+	h4{
+		color:#FFF;
+	}
+	header {
+		background-image: url(../images/fundo1.jpg);
+	}
+	section {
+		padding: 9px;
+	}

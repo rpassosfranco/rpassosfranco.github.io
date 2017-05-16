@@ -1,0 +1,17 @@
+      h2{
+        color:#ff751a;
+        font-size: 20px;
+      }
+
+      h1{
+         color:#ff751a;
+      }
+      h4{
+         color:#ff751a;
+      }
+      header {
+         background-image: url(../images/fundo1.jpg);
+      }
+      section {
+         padding: 9px;
+      }
